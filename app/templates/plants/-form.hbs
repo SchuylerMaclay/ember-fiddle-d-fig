@@ -1,0 +1,36 @@
+<form {{action "save" on="submit"}}>
+  <h2>{{errorMessage}}</h2>
+  <p>
+    <label>Name:
+      {{input value=model.name}}
+    </label>
+  </p>
+  <p>
+    <label>Description:
+      {{input value=model.description }}
+    </label>
+  </p>
+  <p>
+    <label>light:
+      {{input value=model.light}}
+    </label>
+  </p>
+  <p>
+    <label>image:
+      {{input value=model.imageUrl}}
+    </label>
+  </p>
+  <p>
+    <label>water:
+      {{input value=model.water}}
+    </label>
+  </p>
+  <input type="submit" value="Save"/>
+  <button {{action "cancel"}}>Cancel</button>
+</form>
+
+<div>
+<h2>Friend details</h2>
+<p>{{model.name}}</p>
+<p>{{model.description}}</p>
+</div>

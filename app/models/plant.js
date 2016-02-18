@@ -5,5 +5,6 @@ export default DS.Model.extend({
   imageUrl: DS.attr('string'),
   water: DS.attr('string'),
   light: DS.attr('string'),
-  description: DS.attr('string')
+  description: DS.attr('string'),
+  reviews: DS.hasMany('review', {async: true})
 });

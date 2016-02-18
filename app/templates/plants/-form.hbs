@@ -1,0 +1,36 @@
+<form {{action "save" on="submit"}}>
+  <h2>{{errorMessage}}</h2>
+  <p>
+    <label>Name:
+      {{input value=model.name}}
+    </label>
+  </p>
+  <p>
+    <label>Image URL:
+      {{input value=model.imageUrl}}
+    </label>
+  </p>
+  <p>
+    <label>Description:
+      {{input value=model.description }}
+    </label>
+  </p>
+  <p>
+    <label>Light:
+      {{input value=model.light}}
+    </label>
+  </p>
+  <p>
+    <label>Water:
+      {{input value=model.water}}
+    </label>
+  </p>
+  <input type="submit" value="Save"/>
+  <button {{action "cancel"}}>Cancel</button>
+</form>
+
+<div>
+<h2>Plant details</h2>
+<p>{{model.name}}</p>
+<p>{{model.description}}</p>
+</div>

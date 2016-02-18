@@ -10,6 +10,15 @@ Router.map(function() {
     this.route('plant', {
       path: ':plant_id'
     });
+
+    this.route('show', {
+      path: ':plant_id/show'
+    });
+    this.route('new');
+
+    this.route('edit', {
+      path: ':plant_id/edit'
+    });
   });
 });
 

@@ -1,0 +1,7 @@
+{{#each model as |plant|}}
+  <img {{bind-attr src=plant.imageUrl}} >
+  <h4>{{link-to plant.name "plants.plant" plant }}</h4>
+  <p>{{plant.description}}</p>
+{{/each}}
+
+{{outlet}}

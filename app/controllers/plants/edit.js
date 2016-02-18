@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
     save() {
       if (this.get('isValid')) {
         var _this = this; this.get('model').save().then(function(plant) {
-              _this.transitionToRoute('plants.show', plant);
+              _this.transitionToRoute('plants.plant', plant);
             });
     } else {
       this.set('errorMessage', 'You have to fill all the fields');
@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
       return false;
       },
       cancel() {
-        this.transitionToRoute('plants.show', this.get('model'));
+        this.transitionToRoute('plants.plant', this.get('model'));
         return false;
     }
   }

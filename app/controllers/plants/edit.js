@@ -1,29 +1,10 @@
-import Ember from 'ember';
+import PlantsBaseController from './base';
 
-export default Ember.Controller.extend({
-  isValid: Ember.computed(
-    'model.name',
-    'model.imageUrl',
-
-    function() {
-    return !Ember.isEmpty(this.get('model.name')) &&
-      !Ember.isEmpty(this.get('model.imageUrl'));
-    }
-  ),
+export default PlantsBaseController.extend({
   actions: {
-    save() {
-      if (this.get('isValid')) {
-        var _this = this; this.get('model').save().then(function(plant) {
-              _this.transitionToRoute('plants.plant', plant);
-            });
-    } else {
-      this.set('errorMessage', 'You have to fill all the fields');
-      }
+    cancel() {
+      this.transitionToRoute('plants.plant', this.get('model'));
       return false;
-      },
-      cancel() {
-        this.transitionToRoute('plants.plant', this.get('model'));
-        return false;
     }
   }
 });

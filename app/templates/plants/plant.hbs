@@ -14,4 +14,13 @@
       <li>{{review.content}}</li>
     {{/each}}
   </ul>
+  <!-- Add Review Form -->
+  {{#if reviewFormVisible}}
+    <div class="form-group">
+      {{input value=model.reviews.lastObject.content class='form-control col-xs-4' placeholder="Review Plant"}}
+      <button type="button" name="button" {{action "submitReview"}}>Submit Review</button>
+    </div>
+  {{else}}
+    <button type="button" name="button" {{action "showReview"}}>Add A Review</button>
+  {{/if}}
 </div>

@@ -1,5 +1,7 @@
 import ActiveModelAdapter from 'active-model-adapter';
+import ENV from '../config/environment';
+
 export default ActiveModelAdapter.extend({
   namespace: "api/v1",
-  host: "https://secure-fjord-51899.herokuapp.com"
+  host: ENV.APP.API_HOST
 });

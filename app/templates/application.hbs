@@ -1,3 +1,15 @@
 <h2 id="title">Welcome to Fiddle D. Fig </h2>
 
-{{outlet}}
+<div class="container">
+  <div class="row">
+    <ul class='list-inline'>
+      <li>{{link-to "Home" "plants"}}</li>
+      {{#if session.isAuthenticated}}
+        <li><button {{action "logout"}}>Logout</button></li>
+      {{else}}
+        <li>{{link-to 'Login' 'login'}}</li>
+      {{/if}}
+    </ul>
+  </div>
+  {{outlet}}
+</div>

@@ -1,36 +1,114 @@
-<form {{action "save" on="submit"}}>
+<form {{action "save" on="submit"}} class="bs-component">
   <h2>{{errorMessage}}</h2>
-  <p>
+  <div class="form-group">
     <label>Name:
       {{input value=model.name}}
     </label>
-  </p>
-  <p>
+  </div>
+  <div class="form-group">
     <label>Image URL:
       {{input value=model.imageUrl}}
     </label>
-  </p>
-  <p>
+  </div>
+  <div class="form-group">
     <label>Description:
       {{input value=model.description }}
     </label>
-  </p>
-  <p>
+  </div>
+  <div class="form-group">
     <label>Light:
       {{input value=model.light}}
     </label>
-  </p>
-  <p>
+  </div>
+  <div class="form-group">
     <label>Water:
       {{input value=model.water}}
     </label>
-  </p>
-  <input type="submit" value="Save"/>
-  <button {{action "cancel"}}>Cancel</button>
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary"/>
+  <button {{action "cancel"}} class="btn btn-default">Cancel</button>
 </form>
 
 <div>
 <h2>Plant details</h2>
 <p>{{model.name}}</p>
 <p>{{model.description}}</p>
+</div>
+
+
+<div class="col-lg-4">
+<div class="well bs-component">
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>Edit Plant</legend>
+      <div class="form-group">
+        <label for="inputEmail" class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+        <div class="col-lg-10">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Checkbox
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+        <div class="col-lg-10">
+          <textarea class="form-control" rows="3" id="textArea"></textarea>
+          <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Radios</label>
+        <div class="col-lg-10">
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+              Option one is this
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              Option two can be something else
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="select" class="col-lg-2 control-label">Selects</label>
+        <div class="col-lg-10">
+          <select class="form-control" id="select">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <br>
+          <select multiple="" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <button type="reset" class="btn btn-default">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  </div>
 </div>

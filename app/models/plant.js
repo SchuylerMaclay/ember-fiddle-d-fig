@@ -6,5 +6,6 @@ export default DS.Model.extend({
   water: DS.attr('string'),
   light: DS.attr('string'),
   description: DS.attr('string'),
-  reviews: DS.hasMany('review', {async: true})
+  reviews: DS.hasMany('review', {async: true}),
+  userPlants: DS.hasMany('userPlants', {async: true})
 });

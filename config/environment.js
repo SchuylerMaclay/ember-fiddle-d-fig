@@ -4,17 +4,13 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'fiddle-d-fig-ember',
     environment: environment,
-    baseURL: '/',
+    baseURL: '/plants',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
-    },
-
-    contentSecurityPolicy: {
-      'connect-src': "*"
     },
 
     APP: {

@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'fiddle-d-fig-ember',
     environment: environment,
-    baseURL: '/plants',
+    baseURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

@@ -20,6 +20,7 @@ Router.map(function() {
       path: ':plant_id/edit'
     });
   });
+  this.route('login');
 });
 
 export default Router;

@@ -13,19 +13,18 @@ module.exports = function(environment) {
       }
     },
     // contentSecurityPolicy: {
-    //   'style-src': "'self' 'unsafe-inline'",
-    //   'default-src': "'none'",
-    //   'script-src': "'self'",
-    //   'font-src': "'self'",
     //   'connect-src': "'self'",
-    //   'img-src': "'self'",
-    //   'media-src': "'self'"
     // },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
       API_HOST: 'http://localhost:3000' // override
     }
+  };
+
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: 'plants',
+    routeIfAlreadyAuthenticated: 'plants'
   };
 
   if (environment === 'development') {

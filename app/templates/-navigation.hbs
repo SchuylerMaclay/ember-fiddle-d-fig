@@ -70,9 +70,9 @@
 
 
         {{#if session.isAuthenticated}}
-          <!-- <li><button {{action "logout"}}>Logout</button></li> -->
-          <li><button  {{action "logout"}}>Logout</button></li>
-          <li>{{#link-to 'dashboard'}} <button type="button">dashboard</button> {{/link-to}}</li>
+          <li>{{link-to "Create New Plant" "plants.new"}}</li>
+          <li><a href="#" {{action "logout"}}>Logout</a></li>
+          <li>{{#link-to 'dashboard'}}dashboard{{/link-to}}</li>
         {{else}}
           <li>{{link-to 'Login' 'login'}}</li>
         {{/if}}

@@ -1,9 +1,19 @@
 
 {{#each model as |plant|}}
-  <h4>{{link-to plant.name "plants.plant" plant }}</h4>
-  <img {{bind-attr src=plant.imageUrl}} >
-  <p><strong>Description: </strong>{{plant.description}}</p>
+<div class="col-sm-4">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{link-to plant.name "plants.plant" plant }}</h3>
+    </div>
+      <img style="width:100%;"{{bind-attr src=plant.imageUrl}} >
+    <div class="panel-body">
+      <p style="margin-top:10px; font-size:11px;">{{plant.description}}</p>
+    </div>
+  </div>
+</div>
 {{/each}}
 
-{{link-to "Add New Plant" "plants.new"}}
+<!-- {{link-to "Add New Plant" "plants.new"}} -->
 {{outlet}}
+
+

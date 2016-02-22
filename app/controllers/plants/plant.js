@@ -17,11 +17,16 @@ export default Ember.Controller.extend({
     submitReview(){
       let plant = this.get('model');
       let review = this.store.createRecord('review');
+      let user = this.controllerFor('application').get('currentUser');
       review.set('content', this.reviewContent);
       review.set('rating', parseInt(this.selectedRating));
       plant.get('reviews').addObject(review);
+      user.get('reviews').addObject(review);
       review.save();
       this.set('reviewFormVisible', false);
+      this.set('reviewContent', null);
+      this.set('selectedRating', null);
+
       this.transitionToRoute('plants.plant', plant);
     },
     dragResult: function(obj,ops) {

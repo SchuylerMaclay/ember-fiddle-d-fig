@@ -11,7 +11,6 @@ export default Ember.Controller.extend({
   },
   updateCurrentUser: function () {
     if (this.get("session.isAuthenticated")){
-      debugger;
       this.get('store').findRecord('user', 'me').then((user) => {
         this.set('currentUser', user);
         console.log(user);

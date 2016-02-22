@@ -23,7 +23,7 @@ module.exports = function(environment) {
   };
 
   ENV['ember-simple-auth'] = {
-    routeAfterAuthentication: 'plants',
+    routeAfterAuthentication: 'dashboard',
     routeIfAlreadyAuthenticated: 'plants'
   };
 

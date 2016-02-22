@@ -1,6 +1,6 @@
 
 {{#each model as |plant|}}
-  {{#draggable-object content=myObject  dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
+
     <div id="card" class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">
@@ -12,13 +12,32 @@
         </div>
       </div>
     </div>
-  {{/draggable-object}}
 {{/each}}
 <div style="height:500px; width:200px;"></div>
 
 {{#draggable-object-target action="dragResult" resultText='Drag is Complete' dragOverAction='draggingOverTarget' dragOutAction='leftDragTarget' overrideClass='dropTarget'}}
-<div id="target" style="width:100px; height:100px; background-color:purple;"></div>
+
+  {{#if dragFinishText}}
+    {{dragFinishText}}sub
+  {{else}}
+    Drag here to complete Action
+  {{/if}}
+
 {{/draggable-object-target}}
+
+
+
+{{#draggable-object content=myObject  dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
+
+  {{#if dragStartedText}}
+    {{dragStartedText}}
+  {{else if dragEndedText}}
+    {{dragEndedText}}
+  {{else}}
+    Drag Me
+  {{/if}}
+
+{{/draggable-object}}
 
 <!-- {{link-to "Add New Plant" "plants.new"}} -->
 {{outlet}}

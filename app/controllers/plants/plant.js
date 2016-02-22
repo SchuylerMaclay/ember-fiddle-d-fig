@@ -23,6 +23,24 @@ export default Ember.Controller.extend({
       review.save();
       this.set('reviewFormVisible', false);
       this.transitionToRoute('plants.plant', plant);
+    },
+    dragResult: function(obj,ops) {
+      this.set('dragFinishText', ops.target.resultText);
+      console.log('Content of draggable-object :',obj);
+    },
+    dragStart: function() {
+      this.set('dragEndedText', false);
+      this.set('dragStartedText','Drag Has Started');
+    },
+    dragEnd: function() {
+      this.set('dragStartedText', false);
+      this.set('dragEndedText','Drag Has Ended');
+    },
+    draggingOverTarget: function() {
+      console.log('Over target');
+    },
+    leftDragTarget: function() {
+      console.log('Off target');
     }
   }
 });

@@ -9,6 +9,6 @@ export default Ember.Route.extend( {
   actions: {
   },
   model(){
-    return this.store.findRecord('user');
+    return this.store.findRecord('user', 2);
   }
 });

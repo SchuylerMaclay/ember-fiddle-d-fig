@@ -1,0 +1,7 @@
+{{#each model as |user|}}
+  <h4>{{link-to user.name "users.user" user }}</h4>
+
+  <p><strong>Description: </strong>{{user.name}}</p>
+{{/each}}
+
+{{outlet}}

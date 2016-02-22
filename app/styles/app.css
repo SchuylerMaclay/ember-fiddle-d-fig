@@ -1,22 +1,22 @@
 *, *:before, *:after {box-sizing:  border-box !important;}
 
 
-.row {
- -moz-column-width: 25em;
- -webkit-column-width: 25em;
+.crazy-row {
+ -moz-column-width: 15em;
+ -webkit-column-width: 15em;
  -moz-column-gap: 1em;
  -webkit-column-gap:1em;
 
 }
 
-.dragObject > .col-sm-3 {
+.crazy-row > .col-sm-4 {
  display: inline-block;
- padding:  .33rem;
+ padding:  .2rem;
  width:  100%;
  float:none;
 }
 
-.panel {
+.card {
  position:relative;
  display: block;
 }

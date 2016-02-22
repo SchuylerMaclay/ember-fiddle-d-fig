@@ -40,7 +40,6 @@
     "ember-drag-drop": "^0.3.1",
     "ember-export-application-global": "^1.0.4",
     "ember-hypersearch": "0.1.1",
-    "ember-masonry-grid": "1.1.0",
     "ember-simple-auth": "1.0.1"
   }
 }

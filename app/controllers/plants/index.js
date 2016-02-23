@@ -9,6 +9,10 @@ export default Ember.Controller.extend({
   applicationController: Ember.inject.controller('application'),
 
   currentUser: Ember.computed.reads('applicationController.currentUser'),
+  reviewFormVisible: false,
+  reviewContent: null,
+  ratings: ["1","2","3",'4','5','6','7','8','9','10'],
+  selectedRating: null,  
 
 // Purple Thing
   actions: {
@@ -53,6 +57,30 @@ export default Ember.Controller.extend({
     },
     wishlistDragTarget: function() {
       Ember.$('#target-wishlist').css('border','solid #fff 3px');
+    },
+    showReview: function(plant){
+      this.set('reviewFormVisible', true);
+    },
+    cancel(){
+      this.set('reviewFormVisible', false);
+    },
+    showReview(){
+      this.set('reviewFormVisible', true);
+    },
+    submitReview(plant){
+      // let plant = "this.controllerFor('plants').get('plant')";
+      let review = this.store.createRecord('review');
+      let user = this.controllerFor('application').get('currentUser');
+      review.set('content', this.reviewContent);
+      review.set('rating', parseInt(this.selectedRating));
+      plant.get('reviews').addObject(review);
+      user.get('reviews').addObject(review);
+      review.save();
+      this.set('reviewFormVisible', false);
+      this.set('reviewContent', null);
+      this.set('selectedRating', null);
+
+      // this.transitionToRoute('plants.plant', plant);
     }
 
   }

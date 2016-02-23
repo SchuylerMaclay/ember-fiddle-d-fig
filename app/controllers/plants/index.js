@@ -10,13 +10,9 @@ export default Ember.Controller.extend({
 
   currentUser: Ember.computed.reads('applicationController.currentUser'),
   userGarden: Ember.computed('currentUser.userPlants.[]', function(){
-    let garden = [];
-    this.get('currentUser').get('userPlants').forEach(function(plant){
-      // if(plant.ownership === "garden"){
-        garden.pushObject(plant);
-      // }
+    return this.get('currentUser').get('userPlants').filter(function(plant){
+      return plant.get('ownership') === "garden"
     });
-    return garden;
   }),
 
 

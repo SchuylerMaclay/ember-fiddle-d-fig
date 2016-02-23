@@ -1,0 +1,22 @@
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.crazy-row {
+ -moz-column-width: 15em;
+ -webkit-column-width: 15em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em;
+
+}
+
+.crazy-row > .col-sm-4 {
+ display: inline-block;
+ padding:  .2rem;
+ width:  100%;
+ float:none;
+}
+
+.card {
+ position:relative;
+ display: block;
+}

@@ -1,5 +1,10 @@
 
+
+<div class="crazy-row">
+
+
 {{#each model as |plant|}}
+
         <div id="card" class="col-sm-4">
           {{#draggable-object content=plant dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
           <div class="panel panel-primary">
@@ -13,6 +18,7 @@
           </div>
           {{/draggable-object}}
         </div>
+
 {{/each}}
 <div style="height:500px; width:200px;"></div>
 
@@ -22,7 +28,8 @@
     <div id="target" style="width:100px; height:100px; background-color:purple"></div>
   {{/draggable-object-target}}
 
+
+
+</div>
 <!-- {{link-to "Add New Plant" "plants.new"}} -->
 {{outlet}}
-
-

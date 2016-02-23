@@ -1,9 +1,10 @@
 {{yield}}
-<div style="position:fixed;">
+
+<div style="position: fixed; width:220px;">
   <div class="list-group">
     <h5 class="list-group-item active">{{user.name}} Garden</h5>
     {{#each user.userPlants as |userPlant|}}
-      <ul>
+      <ul style="margin-top:20px;">
         <li>{{userPlant.name}}</li>
       </ul>
     {{/each}}

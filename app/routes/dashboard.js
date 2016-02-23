@@ -9,14 +9,13 @@ export default Ember.Route.extend( {
   session: service('session'),
   store: service('store'),
 
-  actions: {
-
-  },
-
-
+  actions: {},
+  
   model(){
-
     return this.get('store').findRecord('user', 'me');
+  },
+  reviews(){
+    let user = this.get('store').findRecord('user', 'me');
+    return this.get('store').findAll('plants', user);
     }
-
 });

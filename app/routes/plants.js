@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   },
   actions: {
     dragResult: function(plant) {
-      debugger;
+
       let user = this.controllerFor('application').get('currentUser');
       let userPlant = this.store.createRecord('user-plant', {
         ownership: 'garden',

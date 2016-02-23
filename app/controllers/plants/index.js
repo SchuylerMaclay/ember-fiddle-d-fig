@@ -2,11 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+
   dragFinishText: false,
   dragStartedText: false,
   dragEndedText: false,
   myObject:{id:1, name:'objectName'},
 
+  user(){
+    return this.controllerFor('application').get('currentUser');
+  },
   actions: {
     dragResult: function(plant) {
       let user = this.controllerFor('application').get('currentUser');

@@ -1,41 +1,93 @@
 
+<div class="row">
+  <!-- Sidebar -->
   <div class="col-xs-3">
-    <!--  user's plants -->
-    <div>
+    <!--  GardenPlants -->
+    <div id="drag-alert"></div>
+    {{#draggable-object-target action="dragResultGarden" resultText='Drag is Complete' dragOverAction='draggingOverGardenTarget' dragOutAction='gardenDragTarget' overrideClass='dropTarget'}}
+      <div id="target-garden" class="list-group">
+        <h5 style="margin-top:0;" class="list-group-item active">{{currentUser.name}} Garden</h5>
+        {{#each currentUser.garden as |gardenPlant|}}
+            <a data-toggle="modal" data-target="#gardenPlant-{{gardenPlant.id}}" class='list-group-item'>{{gardenPlant.name}}</a>
 
-      <div id="drag-alert"></div>
-      {{#draggable-object-target action="dragResultGarden" resultText='Drag is Complete' dragOverAction='draggingOverGardenTarget' dragOutAction='gardenDragTarget' overrideClass='dropTarget'}}
-        <div id="target-garden" class="list-group">
-          <h5 style="margin-top:0;" class="list-group-item active">{{currentUser.name}} Garden</h5>
-          {{#each currentUser.garden as |gardenPlant|}}
-              <a class='list-group-item'>{{gardenPlant.name}}</a>
-          {{/each}}
-        </div>
-      {{/draggable-object-target}}
+            <!-- GardenPlant Modal -->
+            <div id="gardenPlant-{{gardenPlant.id}}" class="modal" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <span class="label label-info">Garden</span>
+                    <h4 class="modal-title">{{gardenPlant.name}}</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p><strong>Species: </strong>{{gardenPlant.plant.name}}</p>
+                    <img src={{gardenPlant.plant.imageUrl}} style="width:100%;">
+                    <p><strong>Average Rating: </strong>{{gardenPlant.plant.avgRating}}</p>
+                    <p><strong>Description: </strong>{{gardenPlant.plant.description}}</p>
+                    <p><strong>Light: </strong>{{gardenPlant.plant.light}}</p>
+                    <p><strong>Water: </strong>{{gardenPlant.plant.water}}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END GardenPlant Modal -->
+        {{/each}}
+      </div>
+    {{/draggable-object-target}}
+    <!-- END GardenPlant -->
 
-      <div id="drag-alert"></div>
-      {{#draggable-object-target action="dragResultWishlist" resultText='Drag is Complete' dragOverAction='draggingOverWishlistTarget' dragOutAction='wishlistDragTarget' overrideClass='dropTarget'}}
-        <div id="target-wishlist" class="list-group">
-          <h5 style="margin-top:0;" class="list-group-item active">{{currentUser.name}}'s Wishlist</h5>
-          {{#each currentUser.wishlist as |wishlistPlant|}}
-              <a class='list-group-item'>{{wishlistPlant.name}}</a>
-          {{/each}}
-        </div>
-      {{/draggable-object-target}}
+    <!-- Wishlist -->
+    <div id="drag-alert"></div>
+    {{#draggable-object-target action="dragResultWishlist" resultText='Drag is Complete' dragOverAction='draggingOverWishlistTarget' dragOutAction='wishlistDragTarget' overrideClass='dropTarget'}}
+      <div id="target-wishlist" class="list-group">
+        <h5 style="margin-top:0;" class="list-group-item active">{{currentUser.name}}'s Wishlist</h5>
+        {{#each currentUser.wishlist as |wishlistPlant|}}
+            <a data-toggle="modal" data-target="#wishlistPlant-{{wishlistPlant.id}}" class='list-group-item'>{{wishlistPlant.name}}</a>
+
+            <!-- Wishlist Modal -->
+            <div id="wishlistPlant-{{wishlistPlant.id}}" class="modal" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <span class="label label-info">Wishlist</span>
+                    <h4 class="modal-title">{{wishlistPlant.name}}</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p><strong>Species: </strong>{{wishlistPlant.plant.name}}</p>
+                    <img src={{wishlistPlant.plant.imageUrl}} style="width:100%;">
+                    <p><strong>Average Rating: </strong>{{wishlistPlant.plant.avgRating}}</p>
+                    <p><strong>Description: </strong>{{wishlistPlant.plant.description}}</p>
+                    <p><strong>Light: </strong>{{wishlistPlant.plant.light}}</p>
+                    <p><strong>Water: </strong>{{wishlistPlant.plant.water}}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END Wishlist Modal -->
+        {{/each}}
+      </div>
+    {{/draggable-object-target}}
+    <!-- END Wishlist -->
   </div>
-  </div>
+  <!-- END Sidebar -->
 
+  <!-- Plants Index -->
   <div class="col-xs-9">
-    <!--  render the index page -->
     <div class="crazy-row">
-      <!--  list of all of the plants -->
+      <!-- List of all of the plants -->
       {{#each model as |plant|}}
-
       <div id="card" class="col-sm-4">
         {{#draggable-object content=plant dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">{{link-to plant.name "plants.plant" plant }}</h3>
+            <h3 class="panel-title"><a href="#" data-toggle="modal" data-target="#{{plant.id}}"> {{plant.name}}</a></h3>
           </div>
           <img src={{plant.imageUrl}} style="width:100%;" >
           <div class="panel-body">
@@ -45,13 +97,31 @@
         {{/draggable-object}}
       </div>
 
+    <!-- Modal content-->
+      <div id="{{plant.id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">{{plant.name}}</h4>
+            </div>
+            <div class="modal-body">
+              <p>{{plant.description}}</p>
+            </div>
+            <div class="modal-body">
+              <img src={{plant.imageUrl}} style="width:100%;" >
+            </div>
+            <div class="modal-footer">
+              <button type="button"  class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal content END-->
       {{/each}}
 
-
-
-
-    <!-- {{link-to "Add New Plant" "plants.new"}} -->
+    </div>
     {{outlet}}
-
   </div>
+  <!-- END Plants Index -->
 </div>

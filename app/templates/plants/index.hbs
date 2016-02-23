@@ -37,7 +37,7 @@
         {{#draggable-object content=plant dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">{{link-to plant.name "plants.plant" plant }}</h3>
+            <h3 class="panel-title"><a href="#" data-toggle="modal" data-target="#{{plant.id}}"> {{plant.name}}</a></h3>
           </div>
           <img src={{plant.imageUrl}} style="width:100%;" >
           <div class="panel-body">
@@ -47,11 +47,35 @@
         {{/draggable-object}}
       </div>
 
+    <!-- Modal content-->
+      <div id="{{plant.id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">{{plant.name}}</h4>
+            </div>
+            <div class="modal-body">
+              <p>{{plant.description}}</p>
+            </div>            
+            <div class="modal-body">
+              <img src={{plant.imageUrl}} style="width:100%;" >
+            </div>
+            <div class="modal-footer">
+              <button type="button"  class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Modal content END-->
       {{/each}}
       <div style="height:500px; width:200px;"></div>
 
 
     </div>
+
+
+
     <!-- {{link-to "Add New Plant" "plants.new"}} -->
     {{outlet}}
 

@@ -1,18 +1,24 @@
 
+
+<div class="crazy-row">
+
+
 {{#each model as |plant|}}
+
         <div id="card" class="col-sm-4">
           {{#draggable-object content=plant dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
           <div class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title">{{link-to plant.name "plants.plant" plant }}</h3>
             </div>
-              <img style="width:100%;"{{bind-attr src=plant.imageUrl}} >
+              <img src={{plant.imageUrl}} style="width:100%;" >
             <div class="panel-body">
               <p style="margin-top:10px; font-size:11px;">{{plant.description}}</p>
             </div>
           </div>
           {{/draggable-object}}
         </div>
+
 {{/each}}
 <div style="height:500px; width:200px;"></div>
 
@@ -22,7 +28,8 @@
     <div id="target" style="width:100px; height:100px; background-color:purple"></div>
   {{/draggable-object-target}}
 
+
+
+</div>
 <!-- {{link-to "Add New Plant" "plants.new"}} -->
 {{outlet}}
-
-

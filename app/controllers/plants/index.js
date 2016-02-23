@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
   dragFinishText: false,
   dragStartedText: false,
   dragEndedText: false,
@@ -37,4 +38,5 @@ export default Ember.Controller.extend({
     }
 
   }
+
 });

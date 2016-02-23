@@ -46,13 +46,13 @@ export default Ember.Controller.extend({
       Ember.$('#target-garden').css('border','solid #c59ab9 3px');
     },
     draggingOverWishlistTarget: function() {
-      Ember.$('#target-wishlist').css('border','#c59ab9 3px');
+      Ember.$('#target-wishlist').css('border','solid #c59ab9 3px');
     },
     gardenDragTarget: function() {
-      Ember.$('#target-garden').css('border','#fff 3px');
+      Ember.$('#target-garden').css('border','solid #fff 3px');
     },
     wishlistDragTarget: function() {
-      Ember.$('#target-wishlist').css('border','#fff 3px');
+      Ember.$('#target-wishlist').css('border','solid #fff 3px');
     }
 
   }

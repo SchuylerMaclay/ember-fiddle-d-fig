@@ -1,23 +1,5 @@
-
-<!-- <div class="container">
-  <h2 id="title">Welcome to Fiddle D. Fig </h2>
-  <div class="row">
-    <ul class='list-inline'>
-      <li>{{link-to "Home" "plants"}}</li>
-      {{#if session.isAuthenticated}}
-        <li><button {{action "logout"}}>Logout</button></li>
-      {{else}}
-        <li>{{link-to 'Login' 'login'}}</li>
-      {{/if}}
-    </ul>
-  </div>
-  {{outlet}}
-</div>
- -->
-
 {{partial "navigation"}}
 
-
-    <div class="container" style = "margin-top:100px;">
-      {{outlet}}
-    </div>
+<div class="container">
+  {{outlet}}
+</div>

@@ -1,35 +1,76 @@
+<div class="row">
+  <div class="col-xs-3">
+    <!--  user's plants -->
+    <div style="position: fixed; width:220px; vertical-align: text-top;">
+    <!--   <div class="list-group">
+        <h5 class="list-group-item active">{{user.name}} Garden</h5>
+        {{#each user.userPlants as |userPlant|}}
+          <ul style="margin-top:20px;">
+            <li>{{userPlant.name }}</li>
+          </ul>
+        {{/each}}
+      </div> -->
 
 
-<div class="crazy-row">
-
-
-{{#each model as |plant|}}
-
-        <div id="card" class="col-sm-4">
-          {{#draggable-object content=plant dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">{{link-to plant.name "plants.plant" plant }}</h3>
-            </div>
-              <img src={{plant.imageUrl}} style="width:100%;" >
-            <div class="panel-body">
-              <p style="margin-top:10px; font-size:11px;">{{plant.description}}</p>
-            </div>
-          </div>
-          {{/draggable-object}}
+      <div id="drag-alert"></div>
+      {{#draggable-object-target action="dragResult" resultText='Drag is Complete' dragOverAction='draggingOverTarget' dragOutAction='leftDragTarget' overrideClass='dropTarget'}}
+        <div id="target" class="list-group">
+          <h5 style="margin-top:0;" class="list-group-item active">{{currentUser.name}} Garden</h5>
+          {{#each userGarden as |gardenPlant|}}
+              <a class='list-group-item'>{{gardenPlant.name}}</a>
+          {{/each}}
         </div>
+      {{/draggable-object-target}}
 
-{{/each}}
-<div style="height:500px; width:200px;"></div>
-
-
-
-  {{#draggable-object-target action="dragResult" resultText='Drag is Complete' dragOverAction='draggingOverTarget' dragOutAction='leftDragTarget' overrideClass='dropTarget'}}
-    <div id="target" style="width:100px; height:100px; background-color:purple"></div>
-  {{/draggable-object-target}}
+      <!--   {{#draggable-object-target action="dragResult" resultText='Drag is Complete' dragOverAction='draggingOverTarget' dragOutAction='leftDragTarget' overrideClass='dropTarget'}}
+        <div id="target" style="width:100px; height:100px; background-color:purple"></div>
+      {{/draggable-object-target}} -->
 
 
+      <div class="list-group">
+        <h5 class="list-group-item active">My Wishlist</h5>
+        <a href="#" class="list-group-item">Dapibus ac facilisis in
+        </a>
+        <a href="#" class="list-group-item">Morbi leo risus
+        </a>
+      </div>
+    </div>
 
+  </div>
+  <div class="col-xs-9">
+    <!--  render the index page -->
+    <div class="crazy-row">
+      <!--  list of all of the plants -->
+      {{#each model as |plant|}}
+
+      <div id="card" class="col-sm-4">
+        {{#draggable-object content=plant dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{link-to plant.name "plants.plant" plant }}</h3>
+          </div>
+          <img src={{plant.imageUrl}} style="width:100%;" >
+          <div class="panel-body">
+            <p style="margin-top:10px; font-size:11px;">{{plant.description}}</p>
+          </div>
+        </div>
+        {{/draggable-object}}
+      </div>
+
+      {{/each}}
+      <div style="height:500px; width:200px;"></div>
+
+
+
+      <!-- {{#draggable-object-target action="dragResult" resultText='Drag is Complete' dragOverAction='draggingOverTarget' dragOutAction='leftDragTarget' overrideClass='dropTarget'}}
+      <div id="target" style="width:100px; height:100px; background-color:purple"></div>
+      {{/draggable-object-target}} -->
+
+
+
+    </div>
+    <!-- {{link-to "Add New Plant" "plants.new"}} -->
+    {{outlet}}
+
+  </div>
 </div>
-<!-- {{link-to "Add New Plant" "plants.new"}} -->
-{{outlet}}

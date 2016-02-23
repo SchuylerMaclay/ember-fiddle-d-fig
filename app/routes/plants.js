@@ -12,12 +12,11 @@ export default Ember.Route.extend({
     dragResult: function(plant) {
       console.log(plant);
       let user = this.controllerFor('application').get('currentUser');
-      // debugger;
       let userPlant = this.store.createRecord('user-plant', {
         ownership: 'garden',
         user: user,
-        plant: plant,
-        name: `${user.get('name')}`
+        plantId: plant.get('id'),
+        name: user.get('name') + " " + plant.get('name')
       });
       userPlant.save();
       // userPlant.set('name', user.name + plant.name);

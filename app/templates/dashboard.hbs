@@ -10,7 +10,23 @@
 
 
   <div class="container">
-    <h2>UserPlants</h2>
+    <h2>Garden</h2>
+    {{#each model.userPlants as |userPlant|}}
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Plant Species: {{userPlant.plant.name}}</div>
+      <div class="panel-body">
+        your plant name: {{userPlant.name}}
+      </div>
+      <div class="panel-body">
+        Status {{userPlant.ownership}}
+      </div>
+    </div>
+
+    {{/each}}
+  </div>
+  <div class="container">
+    <h2>Wishlist</h2>
     {{#each model.userPlants as |userPlant|}}
     <div class="panel panel-default">
       <div class="panel-heading">Plant Species: {{userPlant.plant.name}}</div>

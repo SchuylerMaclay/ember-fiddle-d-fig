@@ -10,7 +10,6 @@ export default DS.Model.extend({
 
   garden: Ember.computed("userPlants", function(){
   return this.get("userPlants").filter(function(item){
-    debugger
     return (item.get('ownership') === "garden");
   }, this);
 })

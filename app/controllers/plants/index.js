@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 
 // Purple Thing
   actions: {
-    dragResult: function(plant) {
+    dragResultGarden: function(plant) {
       let user = this.controllerFor('application').get('currentUser');
       let userPlant = this.store.createRecord('user-plant', {
         ownership: 'garden',
@@ -22,23 +22,37 @@ export default Ember.Controller.extend({
       });
       userPlant.save();
       console.log(userPlant.get('name'));
-      // this.set('dragFinishText', ops.target.resultText);
-      // console.log('Content of draggable-object :',obj);
+    },
+    dragResultWishlist: function(plant) {
+      let user = this.controllerFor('application').get('currentUser');
+      let userPlant = this.store.createRecord('user-plant', {
+        ownership: 'wishlist',
+        user: user,
+        plant: plant,
+        name: user.get('name') + " " + plant.get('name')
+      });
+      userPlant.save();
+      console.log(userPlant.get('name'));
     },
     dragStart: function() {
-      this.set('dragEndedText', false);
-      this.set('dragStartedText','Drag Has Started');
+      // this.set('dragEndedText', false);
+      // this.set('dragStartedText','Drag Has Started');
     },
     dragEnd: function() {
-
-      this.set('dragStartedText', false);
-      this.set('dragEndedText','Drag Has Ended');
+      // this.set('dragStartedText', false);
+      // this.set('dragEndedText','Drag Has Ended');
     },
-    draggingOverTarget: function() {
-      Ember.$('#target').css('border','solid red 3px');
+    draggingOverGardenTarget: function() {
+      Ember.$('#target-garden').css('border','solid #c59ab9 3px');
     },
-    leftDragTarget: function() {
-      Ember.$('#target').css('border','none');
+    draggingOverWishlistTarget: function() {
+      Ember.$('#target-wishlist').css('border','#c59ab9 3px');
+    },
+    gardenDragTarget: function() {
+      Ember.$('#target-garden').css('border','#fff 3px');
+    },
+    wishlistDragTarget: function() {
+      Ember.$('#target-wishlist').css('border','#fff 3px');
     }
 
   }

@@ -1,33 +1,29 @@
-
 <div class="container">
 
   <!-- Sidebar -->
   {{partial "plants/sidebar"}}
   <!-- END Sidebar -->
 
+  <!-- Plants Index -->
+  <div class="col-xs-9">
+    <div class="crazy-row">
+      <!-- List of all of the plants -->
+      {{#each model as |plant|}}
+      <div id="card" class="col-sm-4">
+        {{#draggable-object content=plant dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><a href="#" data-toggle="modal" data-target="#{{plant.id}}"> {{plant.name}}</a></h3>
+          </div>
+          <img src={{plant.imageUrl}} style="width:100%;" >
+          <div class="panel-body">
+            <p style="margin-top:10px; font-size:11px;">{{plant.description}}</p>
+          </div>
+        </div>
+        {{/draggable-object}}
+      </div>
 
-
-<!-- Sidebar -->
-
-        <!-- Plants Index -->
-        <div class="col-xs-9">
-          <div class="crazy-row">
-            <!-- List of all of the plants -->
-            {{#each model as |plant|}}
-            <div id="card" class="col-sm-4">
-              {{#draggable-object content=plant dragStartAction='dragStart' dragEndAction='dragEnd' overrideClass='dragObject'}}
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title"><a href="#" data-toggle="modal" data-target="#{{plant.id}}"> {{plant.name}}</a></h3>
-                </div>
-                <img src={{plant.imageUrl}} style="width:100%;" >
-                <div class="panel-body">
-                  <p style="margin-top:10px; font-size:11px;">{{plant.description}}</p>
-                </div>
-              </div>
-              {{/draggable-object}}
-            </div>
-    <!-- Modal content-->
+      <!-- Modal content-->
       <div id="{{plant.id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -50,8 +46,8 @@
       <!-- Modal content END-->
       {{/each}}
 
+    <!-- END Plants Index -->
     </div>
-    {{outlet}}
   </div>
-  <!-- END Plants Index -->
+  {{!-- CONTAINER END --}}
 </div>

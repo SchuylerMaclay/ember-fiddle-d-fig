@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   currentGardenPlant: null,
   myStickyOptions: {
     wrapperClassName: 'col-xs-3',
-    topSpacing: 60 //px, default: 0
+    topSpacing: 0 //px, default: 0
   },
   dragFinishText: false,
   dragStartedText: false,

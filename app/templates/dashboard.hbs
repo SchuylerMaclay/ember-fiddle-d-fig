@@ -1,43 +1,21 @@
-<div class="container">
+<div class="container-fluid">
+  <h1>Dashboard</h1>
 
   <div class="container">
-
-    <h2>Dashboard</h2>
-
-    <h1>{{model.name}}</h1>
-    <h3>email: {{model.email}}</h3>
-  </div>
-
-
-  <div class="container">
-    <h2>UserPlants</h2>
-    {{#each model.userPlants as |userPlant|}}
-    <div class="panel panel-default">
-      <div class="panel-heading">Plant Species: {{userPlant.plant.name}}</div>
-      <div class="panel-body">
-        your plant name: {{userPlant.name}}
-      </div>
-<!--       <div class="panel-body">
-        Status {{userPlant.ownership}}
-      </div> -->
-      <button class="btn btn-primary btn-xs" {{action 'delete' userPlant}}>Delete</button>
-    </div>
-    {{/each}}
+    <h1>Username: <strong>{{model.name}}</strong></h1>
+    <h3>email: <strong>{{model.email}}</strong></h3>
+    {{!-- <h3>email: <strong>{{model.email}}</strong></h3> --}}
   </div>
 
   <div class="container">
-    <h2>reviews</h2>
-  {{#each model.reviews as |review|}}
-    <div class="panel panel-default">
-      <div class="panel-heading">Plant: {{review.plant.name}}</div>
-      <div class="panel-body">
-        Content: {{review.content}}
-      </div>
-    </div>
-  {{/each}}
+    <h3>Plants in your garden: <strong>{{ model.garden.length}}</strong></h3>
+    {{!-- <h3>Plant Species count(pending): <strong>{{model.garden.length}}</strong></h3> --}}
   </div>
 
-  <a href="#" {{action 'logout'}}>Logout</a>
+  <div class="container">
+    <h3>Reviews Count: <strong>{{model.reviews.length}}</strong></h3>
+  </div>
 
-  {{outlet}}
 </div>
+
+{{outlet}}

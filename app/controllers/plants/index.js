@@ -6,7 +6,11 @@ export default Ember.Controller.extend({
   dragStartedText: false,
   dragEndedText: false,
   myObject:{id:1, name:'objectName'},
+  applicationController: Ember.inject.controller('application'),
 
+  currentUser: Ember.computed.reads('applicationController.currentUser'),
+
+// Purple Thing
   actions: {
     dragResult: function(plant) {
       let user = this.controllerFor('application').get('currentUser');
@@ -14,7 +18,7 @@ export default Ember.Controller.extend({
         ownership: 'garden',
         user: user,
         plant: plant,
-        name: user.get('name') + plant.get('name')
+        name: user.get('name') + " " + plant.get('name')
       });
       userPlant.save();
       console.log(userPlant.get('name'));
@@ -31,10 +35,10 @@ export default Ember.Controller.extend({
       this.set('dragEndedText','Drag Has Ended');
     },
     draggingOverTarget: function() {
-      $('#target').css('border','solid red 3px');
+      Ember.$('#target').css('border','solid red 3px');
     },
     leftDragTarget: function() {
-      $('#target').css('border','none');
+      Ember.$('#target').css('border','none');
     }
 
   }

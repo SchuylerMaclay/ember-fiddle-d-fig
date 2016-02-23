@@ -8,6 +8,8 @@ export default Ember.Controller.extend({
   actions: {
     cancel(){
       this.set('reviewFormVisible', false);
+      this.set('reviewContent', null);
+      this.set('selectedRating', null);
     },
     showReview(){
       this.set('reviewFormVisible', true);

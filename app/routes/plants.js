@@ -16,7 +16,7 @@ export default Ember.Route.extend({
       let userPlant = this.store.createRecord('user-plant', {
         ownership: 'garden',
         user: user,
-        name: `${user.get('name')} ${plant.get('name')}`
+        name: `${user.get('name')} ${plant.get('name')}`,
         plantId: plant.get('id'),
       });
       userPlant.save();

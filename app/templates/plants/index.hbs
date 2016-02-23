@@ -1,5 +1,17 @@
-<div class="col-sm-3">
 
+<div class="col-sm-3">
+  {{plants}}
+<div class="">
+  {{#each  in }}
+  {{/each}}
+</div>
+
+{{#each plants as |plant|}}
+
+<p>
+  {{plant.name}}
+</p>
+{{/each}}
   <div style="position: fixed; width:220px;">
     <div id="drag-alert"></div>
     {{#draggable-object-target action="dragResult" resultText='Drag is Complete' dragOverAction='draggingOverTarget' dragOutAction='leftDragTarget' overrideClass='dropTarget'}}

@@ -1,7 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend( {
+
+
   model(){
-    return this.store.findAll('plant');
+    let model = this.store.findAll('plant');
+    this.controllerFor('application').set('plants', model);
+    return model;
   }
 });

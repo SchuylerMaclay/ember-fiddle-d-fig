@@ -111,21 +111,33 @@
                 <img src={{plant.imageUrl}} style="width:100%;" >
               </div>
               {{#if reviewFormVisible}}
-                <form {{action "submitReview" plant on="submit"}}>
-                  <div class="form-group">
-                    <div class="row">
-                     <label for="rating" class="col-lg-1 control-label">Rating</label>
-                     <div class="col-lg-6">
+                <form class="form-horizontal col-lg-12" {{action "submitReview" plant on="submit"}}>
+                <legend>Write a Review</legend>
+                  <div class="form-group col-lg-12">
+                    <label for="rating" class="col-lg-2 control-label">Rating:</label>
+                     <div class="col-lg-10">
                        {{view "select" content=ratings value=selectedRating prompt="Please Select A Rating" classNames="form-control"}}
                      </div>
-                   </div>
-                    {{input value=reviewContent class='form-control col-lg-4' placeholder="Review Plant"}}
-                  <input class="btn btn-primary" type="submit" value="Add Review"/>
-                  <button class="btn btn-default" {{action "cancel"}}>Cancel</button>
-                </div>
+                  </div>
+                  <div class="form-group col-lg-12">
+                    <label for="content" class="col-lg-2 control-label">Review:</label>
+                    <!-- <textarea value=reviewContent class="form-control col-lg-10" rows="3" id="textArea" placeholder="Review Plant"></textarea> -->
+                    <div class="col-lg-10">
+                      {{textarea value=reviewContent class='form-control' placeholder="Review Plant"}}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <input class="btn btn-primary" type="submit" value="Add Review"/>
+                      <button class="btn btn-default" {{action "cancel"}}>Cancel</button>
+                    </div>
+                  </div>
                 </form>
               {{else}}
-                <button class="btn btn-primary" type="button" name="button" {{action "showReview"}}>Add A Review</button>
+                <div class="col-lg-12">
+                  <button class="btn btn-primary col-lg-6" style="width:130px" type="button" name="button" {{action "showReview"}}>Add A Review</button>
+                  <button class="btn btn-primary col-lg-6" style="width:100px; margin-left:15px;" type="button" name="button" {{action "showReview"}}>Edit Plant</button>
+                </div>
               {{/if}}
             </div>
 
@@ -144,7 +156,7 @@
                 {{#each plant.reviews as |review|}}
                   <div class="panel panel-default">
                     <div class="panel-heading"><strong>Rating: {{review.rating}}</strong>
-                      <br>by {{review.reviewer}} at {{review.time}}
+                      <br><span style="font-size:10px;">by {{review.reviewer}} at {{review.time}}</span>
                     </div>
                     <div class="panel-body">
                       {{review.content}}

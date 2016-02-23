@@ -15,6 +15,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <span class="label label-info">Garden</span>
                     <h4 class="modal-title">{{gardenPlant.name}}</h4>
                   </div>
                   <div class="modal-body">
@@ -43,7 +44,32 @@
       <div id="target-wishlist" class="list-group">
         <h5 style="margin-top:0;" class="list-group-item active">{{currentUser.name}}'s Wishlist</h5>
         {{#each currentUser.wishlist as |wishlistPlant|}}
-            <a class='list-group-item'>{{wishlistPlant.name}}</a>
+            <a data-toggle="modal" data-target="#wishlistPlant-{{wishlistPlant.id}}" class='list-group-item'>{{wishlistPlant.name}}</a>
+
+            <!-- Wishlist Modal -->
+            <div id="wishlistPlant-{{wishlistPlant.id}}" class="modal" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <span class="label label-info">Wishlist</span>
+                    <h4 class="modal-title">{{wishlistPlant.name}}</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p><strong>Species: </strong>{{wishlistPlant.plant.name}}</p>
+                    <img src={{wishlistPlant.plant.imageUrl}} style="width:100%;">
+                    <p><strong>Average Rating: </strong>{{wishlistPlant.plant.avgRating}}</p>
+                    <p><strong>Description: </strong>{{wishlistPlant.plant.description}}</p>
+                    <p><strong>Light: </strong>{{wishlistPlant.plant.light}}</p>
+                    <p><strong>Water: </strong>{{wishlistPlant.plant.water}}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END Wishlist Modal -->
         {{/each}}
       </div>
     {{/draggable-object-target}}

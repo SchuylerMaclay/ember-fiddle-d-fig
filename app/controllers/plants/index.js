@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  myStickyOptions: {
+    wrapperClassName: 'col-xs-3',
+    topSpacing: 60 //px, default: 0
+  },
+
   dragFinishText: false,
   dragStartedText: false,
   dragEndedText: false,

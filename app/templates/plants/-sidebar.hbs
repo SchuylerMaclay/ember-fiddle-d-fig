@@ -16,7 +16,11 @@
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                   <span class="label label-info">Garden</span>
-                  <h4 class="modal-title">{{gardenPlant.name}}</h4>
+                  {{#if editGardenPlantName}}
+                    {{input value=gardenPlant.name class='form-control col-lg-4' insert-newline='editSubmit'}}
+                  {{else}}
+                    <h4 {{action 'toggleGardenPlantNameEdit' gardenPlant on="doubleClick"}} class="modal-title">{{gardenPlant.name}}</h4>
+                  {{/if}}
                 </div>
                 <div class="modal-body">
                   <p><strong>Species: </strong>{{gardenPlant.plant.name}}</p>
@@ -27,6 +31,7 @@
                   <p><strong>Water: </strong>{{gardenPlant.plant.water}}</p>
                 </div>
                 <div class="modal-footer">
+                  <button type="button" {{action "deleteUserPlant" gardenPlant}} data-dismiss="modal" class="btn btn-primary" name="button">Remove From Garden</button>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>
@@ -64,14 +69,14 @@
                   <p><strong>Water: </strong>{{wishlistPlant.plant.water}}</p>
                 </div>
                 <div class="modal-footer">
+                  <button type="button" {{action "deleteUserPlant" wishlistPlant}} data-dismiss="modal" class="btn btn-primary" name="button">Remove From Wishlist</button>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
           </div>
-          <!-- END Wishlist Modal -->
-      {{/each}}
-    </div>
-  {{/draggable-object-target}}
-  <!-- END Wishlist -->
-  {{/sticky-container}}
+          {{!-- END Wishlist MODAL   --}}
+          {{/each}}
+        </div>
+        {{/draggable-object-target}}
+        {{/sticky-container}}

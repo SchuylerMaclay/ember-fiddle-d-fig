@@ -28,7 +28,7 @@
     <div class="form-group">
       <div class="row">
        <label for="rating" class="col-lg-1 control-label">Rating</label>
-       <div class="col-lg-4">
+       <div class="col-lg-6">
          {{view "select" content=ratings value=selectedRating prompt="Please Select A Rating" classNames="form-control"}}
        </div>
      </div>
@@ -40,4 +40,5 @@
   {{else}}
     <button type="button" name="button" {{action "showReview"}}>Add A Review</button>
   {{/if}}
+  <!-- End Review Form -->
 </div>

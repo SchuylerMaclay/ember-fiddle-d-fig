@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  needs: ['index'],
   model(){
     return this.get("store").findRecord('user','me');
   },
@@ -15,8 +16,8 @@ export default Ember.Route.extend({
       let userPlant = this.store.createRecord('user-plant', {
         ownership: 'garden',
         user: user,
+        name: `${user.get('name')} ${plant.get('name')}`
         plantId: plant.get('id'),
-        name: user.get('name') + " " + plant.get('name')
       });
       userPlant.save();
       // userPlant.set('name', user.name + plant.name);

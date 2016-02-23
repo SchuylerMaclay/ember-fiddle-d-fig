@@ -8,14 +8,12 @@ const { store } = Ember.inject;
 export default Ember.Route.extend( {
   session: service('session'),
   store: service('store'),
-
   actions: {
-
+    delete: function(userPlant){
+      userPlant.destroyRecord();
+    }
   },
-
-
   model(){
-
     return this.get('store').findRecord('user', 'me');
     }
 

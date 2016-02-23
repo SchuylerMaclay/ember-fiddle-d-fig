@@ -4,8 +4,8 @@
 
     <h2>Dashboard</h2>
 
-    <h1>your name: {{model.name}}</h1>
-    <h3>your email: {{model.email}}</h3>
+    <h1>{{model.name}}</h1>
+    <h3>email: {{model.email}}</h3>
   </div>
 
 
@@ -17,9 +17,10 @@
       <div class="panel-body">
         your plant name: {{userPlant.name}}
       </div>
-      <div class="panel-body">
+<!--       <div class="panel-body">
         Status {{userPlant.ownership}}
-      </div>
+      </div> -->
+      <button class="btn btn-primary btn-xs" {{action 'delete' userPlant}}>Delete</button>
     </div>
     {{/each}}
   </div>
@@ -33,7 +34,7 @@
         Content: {{review.content}}
       </div>
     </div>
-    {{/each}}
+  {{/each}}
   </div>
 
   <a href="#" {{action 'logout'}}>Logout</a>

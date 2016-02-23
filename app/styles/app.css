@@ -5491,6 +5491,10 @@ button.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
+  border-left:solid #dbdbdb .5px;
+  border-right:solid #dbdbdb .5px;
+  border-bottom:solid #dbdbdb .5px;
+  border-radius:0 0 25px;
 }
 .panel-heading {
   padding: 10px 15px;
@@ -5498,6 +5502,12 @@ button.list-group-item-danger.active:focus {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
+
+.panel-primary img{
+  border-left:solid #dbdbdb .5px;
+  border-right:solid #dbdbdb .5px;
+}
+
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
 }
@@ -5735,7 +5745,7 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #dddddd;
 }
 .panel-primary {
-  border-color: #5d0552;
+  /*border-color: #dbdbdb;*/
 }
 .panel-primary > .panel-heading {
   color: #ffffff;

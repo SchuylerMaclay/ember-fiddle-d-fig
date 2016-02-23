@@ -4,9 +4,7 @@
   <div class="list-group">
     <h5 class="list-group-item active">{{user.name}} Garden</h5>
     {{#each user.userPlants as |userPlant|}}
-      <ul style="margin-top:20px;">
-        <li>{{userPlant.name}}</li>
-      </ul>
+      <a href="#" class="list-group-item">{{userPlant.name}}</a>
     {{/each}}
   </div>
 

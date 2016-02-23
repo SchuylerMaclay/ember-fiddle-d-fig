@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
   myObject:{id:1, name:'objectName'},
 
   actions: {
-    dragResult: function(plant, ops) {
+    dragResult: function(plant) {
       let user = this.controllerFor('application').get('currentUser');
       let userPlant = this.store.createRecord('user-plant', {
         ownership: 'garden',

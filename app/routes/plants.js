@@ -12,7 +12,7 @@ export default Ember.Route.extend({
         ownership: 'garden',
         user: user,
         plant: plant,
-        name: user.get('name') + plant.get('name')
+        name: user.get('name') + " " + plant.get('name')
       });
       userPlant.save();
       console.log(userPlant.get('name'));
@@ -30,13 +30,11 @@ export default Ember.Route.extend({
     },
     draggingOverTarget: function() {
       $('#drag-alert').html(`<div class="alert alert-dismissible alert-danger">
-          <button type="button" class="close" data-dismiss="alert">&close;</button>
-          <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-        </div>`);
+      <button type="button" class="close" data-dismiss="alert">x</button>
+      <strong>Drop the plant to add it to your garden</strong></div>`);
     },
     leftDragTarget: function() {
-      // $('#target').css('background-color','purple');
-      // $('#drag-alert').html('');
+      $('#drag-alert').empty();
     }
   }
 });

@@ -29,12 +29,6 @@ export default Ember.Controller.extend({
 
       this.set('dragStartedText', false);
       this.set('dragEndedText','Drag Has Ended');
-    },
-    draggingOverTarget: function() {
-      $('#target').css('background-color','red');
-    },
-    leftDragTarget: function() {
-      $('#target').css('background-color','purple');
     }
 
   }

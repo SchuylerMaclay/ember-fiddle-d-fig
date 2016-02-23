@@ -17,7 +17,11 @@
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                     <span class="label label-info">Garden</span>
-                    <h4 class="modal-title">{{gardenPlant.name}}</h4>
+                    {{#if editGardenPlantName}}
+                      {{input value=gardenPlant.name class='form-control col-lg-4' insert-newline='editSubmit'}}
+                    {{else}}
+                      <h4 {{action 'toggleGardenPlantNameEdit' gardenPlant on="doubleClick"}} class="modal-title">{{gardenPlant.name}}</h4>
+                    {{/if}}
                   </div>
                   <div class="modal-body">
                     <p><strong>Species: </strong>{{gardenPlant.plant.name}}</p>

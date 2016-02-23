@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  editGardenPlantName: false,
+  currentGardenPlant: null,
   dragFinishText: false,
   dragStartedText: false,
   dragEndedText: false,
@@ -12,6 +14,15 @@ export default Ember.Controller.extend({
 
 // Purple Thing
   actions: {
+    toggleGardenPlantNameEdit: function(gardentPlant){
+      this.set('currentGardenPlant', gardentPlant);
+      this.set('editGardenPlantName', !this.get('editGardenPlantName'));
+    },
+    editSubmit: function(){
+      this.get('currentGardenPlant').save();
+      this.set('currentGardenPlant', null);
+      this.set('editGardenPlantName', false);
+    },
     dragResultGarden: function(plant) {
       let user = this.controllerFor('application').get('currentUser');
       let userPlant = this.store.createRecord('user-plant', {

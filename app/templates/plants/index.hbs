@@ -1,31 +1,4 @@
 
-
-<<<<<<< HEAD
-            <!-- GardenPlant Modal -->
-            <div id="gardenPlant-{{gardenPlant.id}}" class="modal" role="dialog">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                    <span class="label label-info">Garden</span>
-                    {{#if editGardenPlantName}}
-                      {{input value=gardenPlant.name class='form-control col-lg-4' insert-newline='editSubmit'}}
-                    {{else}}
-                      <h4 {{action 'toggleGardenPlantNameEdit' gardenPlant on="doubleClick"}} class="modal-title">{{gardenPlant.name}}</h4>
-                    {{/if}}
-                  </div>
-                  <div class="modal-body">
-                    <p><strong>Species: </strong>{{gardenPlant.plant.name}}</p>
-                    <img src={{gardenPlant.plant.imageUrl}} style="width:100%;">
-                    <p><strong>Average Rating: </strong>{{gardenPlant.plant.avgRating}}</p>
-                    <p><strong>Description: </strong>{{gardenPlant.plant.description}}</p>
-                    <p><strong>Light: </strong>{{gardenPlant.plant.light}}</p>
-                    <p><strong>Water: </strong>{{gardenPlant.plant.water}}</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-=======
 <!-- Sidebar -->
 
   {{#sticky-container options=myStickyOptions}}

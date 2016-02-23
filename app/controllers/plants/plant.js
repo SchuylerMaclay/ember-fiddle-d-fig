@@ -8,6 +8,8 @@ export default Ember.Controller.extend({
   actions: {
     cancel(){
       this.set('reviewFormVisible', false);
+      this.set('reviewContent', null);
+      this.set('selectedRating', null);
     },
     showReview(){
       this.set('reviewFormVisible', true);
@@ -16,12 +18,13 @@ export default Ember.Controller.extend({
     },
     submitReview(){
       let plant = this.get('model');
-      let review = this.store.createRecord('review');
       let user = this.controllerFor('application').get('currentUser');
-      review.set('content', this.reviewContent);
-      review.set('rating', parseInt(this.selectedRating));
-      plant.get('reviews').addObject(review);
-      user.get('reviews').addObject(review);
+      let review = this.store.createRecord('review',{
+        content: this.reviewContent,
+        rating: parseInt(this.selectedRating),
+        user: user,
+        plant: plant
+      });
       review.save();
       this.set('reviewFormVisible', false);
       this.set('reviewContent', null);

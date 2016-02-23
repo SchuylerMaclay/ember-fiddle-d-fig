@@ -17,7 +17,7 @@ export default Ember.Route.extend({
         ownership: 'garden',
         user: user,
         plant: plant,
-        name: `${user.get('name')} ${plant.get('name')}`
+        name: `${user.get('name')}`
       });
       userPlant.save();
       // userPlant.set('name', user.name + plant.name);

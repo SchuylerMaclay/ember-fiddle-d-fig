@@ -33,6 +33,7 @@
                   <p><strong>Water: </strong>{{gardenPlant.plant.water}}</p>
                 </div>
                 <div class="modal-footer">
+                  <button type="button" {{action "deleteUserPlant" gardenPlant}} data-dismiss="modal" class="btn btn-primary" name="button">Remove From Garden</button>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>
@@ -70,6 +71,7 @@
                   <p><strong>Water: </strong>{{wishlistPlant.plant.water}}</p>
                 </div>
                 <div class="modal-footer">
+                  <button type="button" {{action "deleteUserPlant" wishlistPlant}} data-dismiss="modal" class="btn btn-primary" name="button">Remove From Wishlist</button>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>

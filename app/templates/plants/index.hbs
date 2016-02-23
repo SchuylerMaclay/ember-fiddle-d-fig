@@ -8,8 +8,19 @@
       {{#draggable-object-target action="dragResult" resultText='Drag is Complete' dragOverAction='draggingOverTarget' dragOutAction='leftDragTarget' overrideClass='dropTarget'}}
         <div id="target" class="list-group">
           <h5 style="margin-top:0;" class="list-group-item active">{{currentUser.name}} Garden</h5>
-          {{#each userGarden as |gardenPlant|}}
+          {{#each currentUser.garden as |gardenPlant|}}
               <a class='list-group-item'>{{gardenPlant.name}}</a>
+          {{/each}}
+        </div>
+      {{/draggable-object-target}}
+
+
+      <div id=""></div>
+      {{#draggable-object-target action="dragResult" resultText='Drag is Complete' dragOverAction='draggingOverTarget' dragOutAction='leftDragTarget' overrideClass='dropTarget'}}
+        <div id="target" class="list-group">
+          <h5 style="margin-top:0;" class="list-group-item active">{{currentUser.name}} Garden</h5>
+          {{#each currentUser.wishlist as |wishlistPlant|}}
+              <a class='list-group-item'>{{wishlistPlant.name}}</a>
           {{/each}}
         </div>
       {{/draggable-object-target}}

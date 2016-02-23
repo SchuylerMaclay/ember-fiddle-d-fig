@@ -9,12 +9,6 @@ export default Ember.Controller.extend({
   applicationController: Ember.inject.controller('application'),
 
   currentUser: Ember.computed.reads('applicationController.currentUser'),
-  userGarden: Ember.computed('currentUser.userPlants.[]', function(){
-    return this.get('currentUser').get('userPlants').filter(function(plant){
-      return plant.get('ownership') === "garden"
-    });
-  }),
-
 
 // Purple Thing
   actions: {
@@ -41,10 +35,10 @@ export default Ember.Controller.extend({
       this.set('dragEndedText','Drag Has Ended');
     },
     draggingOverTarget: function() {
-      $('#target').css('border','solid red 3px');
+      Ember.$('#target').css('border','solid red 3px');
     },
     leftDragTarget: function() {
-      $('#target').css('border','none');
+      Ember.$('#target').css('border','none');
     }
 
   }

@@ -33,20 +33,20 @@ export default Ember.Route.extend({
     dragEnd: function() {
       this.set('dragStartedText', false);
       this.set('dragEndedText','Drag Has Ended');
-      $('#target').css('border','none');
+      Ember.$('#target').css('border','none');
 
     },
     draggingOverTarget: function() {
-      $('#target').css('border','solid red 3px');
-      // $('#drag-alert').html(`<div class="alert alert-dismissible alert-danger">
+      Ember.$('#target').css('border','solid red 3px');
+      // Ember.$('#drag-alert').html(`<div class="alert alert-dismissible alert-danger">
       //     <button type="button" class="close" data-dismiss="alert">&close;</button>
       //     <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
       //   </div>`);
     },
     leftDragTarget: function() {
-      $('#target').css('border','none');
-      // $('#target').css('background-color','purple');
-      // $('#drag-alert').html('');
+      Ember.$('#target').css('border','none');
+      // Ember.$('#target').css('background-color','purple');
+      // Ember.$('#drag-alert').html('');
     }
   }
 });

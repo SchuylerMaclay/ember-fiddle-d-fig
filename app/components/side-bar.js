@@ -9,7 +9,8 @@ export default Ember.Component.extend({
       this.sendAction('draggingOverTarget');
     },
     dragResult(){
-      this.sendAction('dragResult');
+      debugger;
+      this.sendAction('dragResult', this.get('plant'));
     },
     leftDragTarget(){
       this.sendAction('leftDragTarget');

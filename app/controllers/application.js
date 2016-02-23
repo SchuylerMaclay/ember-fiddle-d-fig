@@ -13,7 +13,6 @@ export default Ember.Controller.extend({
     if (this.get("session.isAuthenticated")){
       this.get('store').findRecord('user', 'me').then((user) => {
         this.set('currentUser', user);
-        console.log(user);
       });
     }
   }.on('init')

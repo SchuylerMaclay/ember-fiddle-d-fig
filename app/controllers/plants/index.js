@@ -6,7 +6,21 @@ export default Ember.Controller.extend({
   dragStartedText: false,
   dragEndedText: false,
   myObject:{id:1, name:'objectName'},
+  applicationController: Ember.inject.controller('application'),
 
+  currentUser: Ember.computed.reads('applicationController.currentUser'),
+  userGarden: Ember.computed('currentUser.userPlants.[]', function(){
+    let garden = [];
+    this.get('currentUser').get('userPlants').forEach(function(plant){
+      // if(plant.ownership === "garden"){
+        garden.pushObject(plant);
+      // }
+    });
+    return garden;
+  }),
+
+
+// Purple Thing
   actions: {
     dragResult: function(plant) {
       let user = this.controllerFor('application').get('currentUser');
@@ -14,7 +28,7 @@ export default Ember.Controller.extend({
         ownership: 'garden',
         user: user,
         plant: plant,
-        name: user.get('name') + plant.get('name')
+        name: user.get('name') + " " + plant.get('name')
       });
       userPlant.save();
       console.log(userPlant.get('name'));

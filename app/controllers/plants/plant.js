@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
   // ratings: ["1","2","3",'4','5','6','7','8','9','10'],
   // selectedRating: null,
   actions: {
+
     // cancel(){
     //   this.set('reviewFormVisible', false);
     // },
@@ -24,6 +25,7 @@ export default Ember.Controller.extend({
     //   this.set('reviewFormVisible', false);
     //   this.set('reviewContent', null);
     //   this.set('selectedRating', null);
+
 
     //   this.transitionToRoute('plants.plant', plant);
     // }

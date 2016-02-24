@@ -16,12 +16,19 @@ export default Ember.Controller.extend({
 
   currentUser: Ember.computed.reads('applicationController.currentUser'),
   reviewFormVisible: false,
+  editFormVisible: false,
   reviewContent: null,
   ratings: ["1","2","3",'4','5','6','7','8','9','10'],
-  selectedRating: null,
+  selectedRating: null,  
+  // isValid: Ember.computed('plant.name', 'plant.imageUrl', function() {
+  //   return !Ember.isEmpty(this.get('plant.name')) && !Ember.isEmpty(this.get('plant.imageUrl'));
+  //   }
+  // ),
+
 
 // Purple Thing
   actions: {
+    
     toggleGardenPlantNameEdit: function(gardentPlant){
       this.set('currentGardenPlant', gardentPlant);
       this.set('editGardenPlantName', !this.get('editGardenPlantName'));
@@ -79,6 +86,9 @@ export default Ember.Controller.extend({
     showReview: function(plant){
       this.set('reviewFormVisible', true);
     },
+    showEdit: function(plant){
+      this.set('editFormVisible', true);
+    },
     cancel(){
       this.set('reviewFormVisible', false);
       this.set('reviewContent', null);
@@ -101,7 +111,15 @@ export default Ember.Controller.extend({
       this.set('selectedRating', null);
 
       // this.transitionToRoute('plants.plant', plant);
+    },
+    save(plant) {
+        plant.save();
+        this.set('editFormVisible', false);
+      },
+    cancelEdit() {
+      this.set('editFormVisible', false);
     }
+
 
   }
 

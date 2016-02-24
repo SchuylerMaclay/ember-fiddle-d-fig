@@ -27,7 +27,7 @@
 }
 
 
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700");
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,400italic,300italic,300,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic,200italic,200,100italic,100);
 /*!
  * bootswatch v3.3.6
  * Homepage: http://bootswatch.com
@@ -42,7 +42,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family:sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -1115,7 +1115,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway, Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -1130,7 +1130,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #5d0552;
+  color: #5f4d70;
   text-decoration: none;
 }
 a:hover,
@@ -1217,7 +1217,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -1371,7 +1371,7 @@ mark,
   color: #aea79f;
 }
 .text-primary {
-  color: #5d0552;
+  color: #5f4d70;
 }
 a.text-primary:hover,
 a.text-primary:focus {
@@ -1407,7 +1407,7 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #5d0552;
+  background-color: #5f4d70;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
@@ -3151,8 +3151,8 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #5d0552;
-  border-color: #5d0552;
+  background-color: #5f4d70;
+  border-color: #5f4d70;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -3199,11 +3199,11 @@ fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled.focus,
 .btn-primary[disabled].focus,
 fieldset[disabled] .btn-primary.focus {
-  background-color: #5d0552;
-  border-color: #5d0552;
+  background-color: #5f4d70;
+  border-color: #5f4d70;
 }
 .btn-primary .badge {
-  color: #5d0552;
+  color: #5f4d70;
   background-color: #ffffff;
 }
 .btn-success {
@@ -3435,7 +3435,7 @@ fieldset[disabled] .btn-danger.focus {
   background-color: #ffffff;
 }
 .btn-link {
-  color: #5d0552;
+  color: #5f4d70;
   font-weight: normal;
   border-radius: 0;
 }
@@ -3598,7 +3598,7 @@ tbody.collapse.in {
 .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #ffffff;
-  background-color: #5d0552;
+  background-color: #5f4d70;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -3606,7 +3606,7 @@ tbody.collapse.in {
   color: #ffffff;
   text-decoration: none;
   outline: 0;
-  background-color: #5d0552;
+  background-color: #5f4d70;
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -4040,7 +4040,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #5d0552;
+  border-color: #5f4d70;
 }
 .nav .nav-divider {
   height: 1px;
@@ -4133,7 +4133,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #5d0552;
+  background-color: #5f4d70;
 }
 .nav-stacked > li {
   float: none;
@@ -4529,7 +4529,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #5d0552;
+  background-color: #5f4d70;
   border-color: #36042f;
 }
 .navbar-default .navbar-brand {
@@ -4760,7 +4760,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 8px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #5d0552;
+  color: #5f4d70;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   margin-left: -1px;
@@ -4911,7 +4911,7 @@ a.label:focus {
   background-color: #978e83;
 }
 .label-primary {
-  background-color: #5d0552;
+  background-color: #5f4d70;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
@@ -4979,7 +4979,7 @@ a.badge:focus {
 }
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #5d0552;
+  color: #5f4d70;
   background-color: #ffffff;
 }
 .list-group-item > .badge {
@@ -5054,7 +5054,7 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #5d0552;
+  border-color: #5f4d70;
 }
 .thumbnail .caption {
   padding: 9px;
@@ -5176,7 +5176,7 @@ a.thumbnail.active {
   line-height: 20px;
   color: #ffffff;
   text-align: center;
-  background-color: #5d0552;
+  background-color: #5f4d70;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -5340,8 +5340,8 @@ button.list-group-item {
 .list-group-item.active:focus {
   z-index: 2;
   color: #ffffff;
-  background-color: #5d0552;
-  border-color: #5d0552;
+  background-color: #5f4d70;
+  border-color: #5f4d70;
 }
 .list-group-item.active .list-group-item-heading,
 .list-group-item.active:hover .list-group-item-heading,
@@ -5751,18 +5751,18 @@ button.list-group-item-danger.active:focus {
 }
 .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: #5d0552;
-  border-color: #5d0552;
+  background-color: #5f4d70;
+  border-color: #5f4d70;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #5d0552;
+  border-top-color: #5f4d70;
 }
 .panel-primary > .panel-heading .badge {
-  color: #5d0552;
+  color: #5f4d70;
   background-color: #ffffff;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #5d0552;
+  border-bottom-color: #5f4d70;
 }
 .panel-success {
   border-color: #d6e9c6;
@@ -6036,7 +6036,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6154,7 +6154,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6799,7 +6799,7 @@ button.close {
 }
 .navbar-default .badge {
   background-color: #fff;
-  color: #5d0552;
+  color: #5f4d70;
 }
 .navbar-inverse .badge {
   background-color: #fff;

@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
   reviewFormVisible: false,
   reviewContent: null,
   ratings: ["1","2","3",'4','5','6','7','8','9','10'],
-  selectedRating: null,  
+  selectedRating: null,
 
 // Purple Thing
   actions: {

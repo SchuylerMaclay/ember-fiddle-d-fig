@@ -25,6 +25,7 @@ export default Ember.Controller.extend({
   //   }
   // ),
 
+
 // Purple Thing
   actions: {
     

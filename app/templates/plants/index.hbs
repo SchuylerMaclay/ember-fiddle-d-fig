@@ -38,6 +38,11 @@
             <div id="left-half" class="col-lg-6 col-md-6 col-sm-12"> 
               <div class="modal-body">
                 <img src={{plant.imageUrl}} style="width:100%;" >
+              </div>              
+              <div class="modal-body col-lg-12">
+                {{#if editFormVisible}}
+                  {{partial "plants/editform"}}
+                {{/if}}
               </div>
               {{#if reviewFormVisible}}
                 <form class="form-horizontal col-lg-12" {{action "submitReview" plant on="submit"}}>
@@ -65,7 +70,7 @@
               {{else}}
                 <div class="col-lg-12">
                   <button class="btn btn-primary col-lg-6" style="width:130px" type="button" name="button" {{action "showReview"}}>Add A Review</button>
-                  <button class="btn btn-primary col-lg-6" style="width:100px; margin-left:15px;" type="button" name="button" {{action "showReview"}}>Edit Plant</button>
+                  <button class="btn btn-primary col-lg-6" style="width:100px; margin-left:15px;" type="button" name="button" {{action "showEdit"}}>Edit Plant</button>
                 </div>
               {{/if}}
             </div>
@@ -88,7 +93,7 @@
                       <br><span style="font-size:10px;">by {{review.reviewer}} at {{review.time}}</span>
                     </div>
                     <div class="panel-body">
-                      {{review.content}}
+                      {{review.content}} 
                     </div>
                   </div>
                 {{/each}}

@@ -5,7 +5,15 @@
 
   <!-- Plants Index -->
   <div class="col-xs-9">
+
+    <!-- Alert user of drag and drop -->
+    <div class="alert alert-dismissible alert-info">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Heads up!</strong> You can drag plants you like to your wishlist. And if you already own a plant drag it to your garden!
+    </div>
+
     <div class="crazy-row">
+
       <!-- List of all of the plants -->
       {{#each model as |plant|}}
       <div id="card" class="col-sm-4">
@@ -28,7 +36,7 @@
 
           <div class="modal-content">
             <div class="modal-header" >
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <button type="button" class="close" data-dismiss="modal" {{action "clearForms"}}>&times;</button>
               <h4 class="modal-title"><strong>{{plant.name}}</strong></h4>
             </div>
 
@@ -36,12 +44,8 @@
             <div id="left-half" class="col-lg-6 col-md-6 col-sm-12">
               <div class="modal-body">
                 <img src={{plant.imageUrl}} style="width:100%;" >
-              </div>              
-              <div class="modal-body col-lg-12">
-                {{#if editFormVisible}}
-                  {{partial "plants/editform"}}
-                {{/if}}
               </div>
+
               {{#if reviewFormVisible}}
                 <form class="form-horizontal col-lg-12" {{action "submitReview" plant on="submit"}}>
                 <legend>Write a Review</legend>
@@ -53,7 +57,6 @@
                   </div>
                   <div class="form-group col-lg-12">
                     <label for="content" class="col-lg-2 control-label">Review:</label>
-                    <!-- <textarea value=reviewContent class="form-control col-lg-10" rows="3" id="textArea" placeholder="Review Plant"></textarea> -->
                     <div class="col-lg-10">
                       {{textarea value=reviewContent class='form-control' placeholder="Review Plant"}}
                     </div>
@@ -65,7 +68,8 @@
                     </div>
                   </div>
                 </form>
-              {{else}}
+              {{/if}}
+              {{#if buttonsVisible}}
                 <div class="col-lg-12">
                   <button class="btn btn-primary col-lg-6" style="width:130px" type="button" name="button" {{action "showReview"}}>Add A Review</button>
                   <button class="btn btn-primary col-lg-6" style="width:100px; margin-left:15px;" type="button" name="button" {{action "showEdit"}}>Edit Plant</button>
@@ -78,10 +82,14 @@
             <!-- BEGIN RIGHT HALF OF MODAL -->
             <div id="right-half" class="col-lg-6 col-md-6 col-sm-12">
               <div class="modal-body">
-                <p><strong>Average Rating: </strong>{{plant.avgRating}}</p>
-                <p><strong>Description: </strong>{{plant.description}}</p>
-                <p><strong>Light: </strong>{{plant.light}}</p>
-                <p><strong>Water: </strong>{{plant.water}}</p>
+                {{#if editFormVisible}}
+                  {{partial "plants/editform"}}
+                {{else}}  
+                  <p><strong>Average Rating: </strong>{{plant.avgRating}}</p>
+                  <p><strong>Description: </strong>{{plant.description}}</p>
+                  <p><strong>Light: </strong>{{plant.light}}</p>
+                  <p><strong>Water: </strong>{{plant.water}}</p>
+                {{/if}}
               </div>
               <div class="modal-body">
                 <h4>Reviews</h4>
@@ -91,7 +99,7 @@
                       <br><span style="font-size:10px;">by {{review.reviewer}} at {{review.time}}</span>
                     </div>
                     <div class="panel-body">
-                      {{review.content}} 
+                      {{review.content}}
                     </div>
                   </div>
                 {{/each}}
@@ -100,7 +108,7 @@
             <!-- END RIGHT HALF OF MODAL -->
 
             <div class="modal-footer">
-              <button type="button"  class="btn btn-primary" data-dismiss="modal">Close</button>
+              <button type="button"  class="btn btn-primary" {{action "clearForms"}} data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-<form {{action "save" on="submit"}}>
+<!-- <form {{action "save" on="submit"}}>
   <h2>{{errorMessage}}</h2>
   <p>
     <label>Name:
@@ -12,7 +12,7 @@
   </p>
   <p>
     <label>Description:
-      {{input value=plant.description }}
+      {{textarea value=plant.description cols="35" rows="6"}}
     </label>
   </p>
   <p>
@@ -25,10 +25,56 @@
       {{input value=plant.water}}
     </label>
   </p>
-  <!-- <input type="submit" value="Save"/> -->
-  <button {{action "save" plant}}>Save</button>
-  <button {{action "cancelEdit"}}>Cancel</button>
-</form>
+  <button {{action "save" plant}} class="btn btn-primary col-lg-6">Save</button>
+  <button {{action "cancelEdit"}} class="btn btn-primary col-lg-6">Cancel</button>
+</form> -->
+
+<div class="well bs-component">
+  <form {{action "save" plant on="submit"}} class="form-horizontal">
+    <fieldset>
+      <legend>Edit {{plant.name}}</legend>
+      <p>{{errorMessage}}</p>
+      <div class="form-group">
+        <label for="inputName" class="col-lg-2 control-label">Name:</label>
+        <div class="col-lg-10">
+          {{input type="text" class="form-control" id="inputName" value=plant.name}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputURL" class="col-lg-2 control-label">Image URL:</label>
+        <div class="col-lg-10">
+          {{input type="text" class="form-control" id="inputURL" value=plant.imageUrl}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputDescription" class="col-lg-2 control-label">Description:</label>
+        <div class="col-lg-10">
+          {{textarea class="form-control" id="inputDescription" value=plant.description rows="6"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputLight" class="col-lg-2 control-label">Light:</label>
+        <div class="col-lg-10">
+          {{input type="text" class="form-control" id="inputLight" value=plant.light}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputWater" class="col-lg-2 control-label">Water:</label>
+        <div class="col-lg-10">
+          {{input type="text" class="form-control" id="inputWater" value=plant.water}}
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+        <input class="btn btn-primary" type="submit" value="Save">
+        <button class="btn btn-primary" {{action "cancelEdit"}}>Cancel</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  </div>
 
 <!-- <h3>***Don't use this form yet***</h3>
 <div class="well bs-component">
@@ -87,4 +133,3 @@
 <p>{{plant.name}}</p>
 <p>{{plant.description}}</p>
 </div> -->
-

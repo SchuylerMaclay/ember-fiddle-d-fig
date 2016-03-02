@@ -47,6 +47,9 @@ export default Ember.Controller.extend({
     deleteUserPlant: function(userPlant){
       userPlant.destroyRecord();
     },
+    addWishlistToGarden: function(userPlant){
+      userPlant.set("ownership", "garden");
+    },
     dragResultGarden: function(plant) {
       let user = this.controllerFor('application').get('currentUser');
       let userPlant = this.store.createRecord('user-plant', {

@@ -1,18 +1,19 @@
-<h2>Login</h2>
-<form {{action 'authenticate' on='submit'}}>
-  <label for="identification">Email</label>
-  {{input id='identification' placeholder='Enter Email' value=identification type="email"}}
-  <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}
-  <button type="submit">Login</button>
-  {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-  {{/if}}
-</form>
-<br>
 <div class="container">
 
   <div class="well">
+    <h2>Login</h2><br>
+    <form {{action 'authenticate' on='submit'}}>
+      <label for="identification">Email</label>
+      {{input id='identification' placeholder='Enter Email' value=identification type="email"}}
+      <label for="password">Password</label>
+      {{input id='password' placeholder='Enter Password' type='password' value=password}}
+      <button type="submit">Login</button>
+      {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+      {{/if}}
+    </form>
+
+    <br>
     <br>
     <span>If you'd like a test user, try bob@bob, password: bob</span>
     <br>

@@ -32,7 +32,7 @@
 
     <!-- Plant Modal content-->
       <div id="{{plant.id}}" class="modal fade col-12" role="dialog">
-        <div class="modal-dialog modal-sm modal-lg">
+        <div class="modal-dialog modal-lg">
 
           <div class="modal-content">
             <div class="modal-header" >
@@ -44,6 +44,11 @@
             <div id="left-half" class="col-lg-6 col-md-6 col-sm-12">
               <div class="modal-body">
                 <img src={{plant.imageUrl}} style="width:100%;" >
+              </div>
+              <div class="modal-body">
+                {{#if editFormVisible}}
+                {{partial "plants/editform"}}
+                {{/if}}
               </div>
 
               {{#if reviewFormVisible}}
@@ -82,14 +87,10 @@
             <!-- BEGIN RIGHT HALF OF MODAL -->
             <div id="right-half" class="col-lg-6 col-md-6 col-sm-12">
               <div class="modal-body">
-                {{#if editFormVisible}}
-                  {{partial "plants/editform"}}
-                {{else}}  
-                  <p><strong>Average Rating: </strong>{{plant.avgRating}}</p>
-                  <p><strong>Description: </strong>{{plant.description}}</p>
-                  <p><strong>Light: </strong>{{plant.light}}</p>
-                  <p><strong>Water: </strong>{{plant.water}}</p>
-                {{/if}}
+                <p><strong>Average Rating: </strong>{{plant.avgRating}}</p>
+                <p><strong>Description: </strong>{{plant.description}}</p>
+                <p><strong>Light: </strong>{{plant.light}}</p>
+                <p><strong>Water: </strong>{{plant.water}}</p>
               </div>
               <div class="modal-body">
                 <h4>Reviews</h4>
